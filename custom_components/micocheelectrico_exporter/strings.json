@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MiCocheEléctrico",
+        "description": "Configura el envío automático de datos del vehículo.",
+        "data": {
+          "token": "Token personal",
+          "battery_sensor": "Batería del vehículo",
+          "range_sensor": "Autonomía restante",
+          "odometer_sensor": "Kilometraje total",
+          "charging_sensor": "Estado de carga",
+          "gps_tracker": "Localización GPS"
+        }
+      }
+    }
+  }
+}
