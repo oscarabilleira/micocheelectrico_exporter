@@ -6,6 +6,8 @@ from datetime import timedelta
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.event import async_track_time_interval
+from homeassistant.helpers import device_registry as dr
+from homeassistant.helpers import entity_registry as er
 
 from .const import DOMAIN
 
@@ -36,6 +38,24 @@ async def async_setup_entry(
         if not bateria or not autonomia or not odometro:
             return
 
+        manufacturer = None
+        model = None
+
+        try:
+            entity_registry = er.async_get(hass)
+            entity_entry = entity_registry.async_get(datos["battery_sensor"])
+
+            if entity_entry and entity_entry.device_id:
+                device_registry = dr.async_get(hass)
+                device = device_registry.async_get(entity_entry.device_id)
+
+                if device:
+                    manufacturer = device.manufacturer
+                    model = device.model
+
+        except Exception:
+            pass
+
         # Enviar estado de carga exactamente como lo entrega Home Assistant
         charging_estado = (
             carga.state
@@ -44,6 +64,9 @@ async def async_setup_entry(
         )
 
         payload = {
+            "manufacturer": manufacturer,
+            "model": model,
+
             "odometer": int(float(odometro.state)),
             "range": int(float(autonomia.state)),
             "level": int(float(bateria.state)),
@@ -92,7 +115,6 @@ async def async_setup_entry(
             print(
                 f"Error enviando datos MiCocheEléctrico: {e}"
             )
-
 
     unsub = async_track_time_interval(
         hass,
