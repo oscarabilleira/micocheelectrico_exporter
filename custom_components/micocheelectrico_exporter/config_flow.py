@@ -63,6 +63,15 @@ def get_schema(defaults=None):
                     domain="device_tracker"
                 )
             ),
+
+            vol.Optional(
+                "charge_power_sensor",
+                default=defaults.get("charge_power_sensor")
+            ): selector.EntitySelector(
+                selector.EntitySelectorConfig(
+                    domain="sensor"
+                )
+            ),
         }
     )
 
@@ -173,6 +182,12 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             data["gps_tracker"]
         )
 
+        potencia = (
+            self.hass.states.get(data["charge_power_sensor"])
+            if data.get("charge_power_sensor")
+            else None
+        )
+
         return {
 
             "battery_sensor": data["battery_sensor"],
@@ -207,6 +222,16 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             "gps_value": (
                 gps.state
                 if gps
+                else "No disponible"
+            ),
+
+            "charge_power_sensor": (
+                data.get("charge_power_sensor")
+                or "No configurado"
+            ),
+            "charge_power_value": (
+                potencia.state
+                if potencia
                 else "No disponible"
             ),
         }

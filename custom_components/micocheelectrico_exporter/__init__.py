@@ -34,6 +34,12 @@ async def async_setup_entry(
         carga = hass.states.get(datos["charging_sensor"])
         gps = hass.states.get(datos["gps_tracker"])
 
+        potencia = (
+            hass.states.get(datos["charge_power_sensor"])
+            if datos.get("charge_power_sensor")
+            else None
+        )
+
         # Comprobación mínima de sensores necesarios
         if not bateria or not autonomia or not odometro:
             return
@@ -63,6 +69,16 @@ async def async_setup_entry(
             else "Unknown"
         )
 
+        # Potencia de carga (kW), si el sensor existe y tiene un valor numérico
+        charger_power = 0.0
+
+        if potencia and potencia.state not in (None, "unknown", "unavailable"):
+
+            try:
+                charger_power = float(potencia.state)
+            except ValueError:
+                charger_power = 0.0
+
         payload = {
             "manufacturer": manufacturer,
             "model": model,
@@ -73,6 +89,8 @@ async def async_setup_entry(
             "charging": charging_estado,
 
             "plugged": False,
+
+            "chargerPower": charger_power,
 
             "latitude": (
                 gps.attributes.get("latitude")

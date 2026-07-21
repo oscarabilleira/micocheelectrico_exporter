@@ -5,55 +5,55 @@
         "title": "Configuración MiCocheEléctrico",
         "description": "Selecciona los sensores del vehículo.",
         "data": {
-          "token": "Token personal",
-          "battery_sensor": "Batería del vehículo",
-          "range_sensor": "Autonomía restante",
-          "odometer_sensor": "Kilometraje total",
-          "charging_sensor": "Estado de carga",
-          "gps_tracker": "Localización GPS"
+          "token": "Personal token",
+          "battery_sensor": "Vehicle battery",
+          "range_sensor": "Remaining range",
+          "odometer_sensor": "Total odometer",
+          "charging_sensor": "Charging status",
+          "gps_tracker": "GPS location",
+          "charge_power_sensor": "Charging power (kW)"
         },
         "data_description": {
-          "token": "Introduce el token personal proporcionado por MiCocheEléctrico.",
-          "battery_sensor": "Selecciona el sensor que indica el porcentaje de batería del vehículo.",
-          "range_sensor": "Selecciona el sensor que indica los kilómetros de autonomía restantes.",
-          "odometer_sensor": "Selecciona el sensor que indica el kilometraje total del vehículo.",
-          "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
-          "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo."
+          "token": "Enter the personal token provided by MiCocheEléctrico.",
+          "battery_sensor": "Select the sensor showing the vehicle's battery percentage.",
+          "range_sensor": "Select the sensor showing the remaining range in km.",
+          "odometer_sensor": "Select the sensor showing the total odometer reading.",
+          "charging_sensor": "Select the sensor showing the vehicle's charging status.",
+          "gps_tracker": "Select the device providing the vehicle's GPS position.",
+          "charge_power_sensor": "Optional. Select the sensor showing charging power in kW."
         }
       },
-
       "verify": {
         "title": "Verificar sensores",
-        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}"
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}"
       },
-
       "reconfigure": {
         "title": "Reconfigurar MiCocheEléctrico",
         "description": "Modifica la configuración de los sensores.",
         "data": {
-          "token": "Token personal",
-          "battery_sensor": "Batería del vehículo",
-          "range_sensor": "Autonomía restante",
-          "odometer_sensor": "Kilometraje total",
-          "charging_sensor": "Estado de carga",
-          "gps_tracker": "Localización GPS"
+          "token": "Personal token",
+          "battery_sensor": "Vehicle battery",
+          "range_sensor": "Remaining range",
+          "odometer_sensor": "Total odometer",
+          "charging_sensor": "Charging status",
+          "gps_tracker": "GPS location",
+          "charge_power_sensor": "Charging power (kW)"
         },
         "data_description": {
-          "token": "Introduce el token personal proporcionado por MiCocheEléctrico.",
-          "battery_sensor": "Selecciona el sensor que indica el porcentaje de batería del vehículo.",
-          "range_sensor": "Selecciona el sensor que indica los kilómetros de autonomía restantes.",
-          "odometer_sensor": "Selecciona el sensor que indica el kilometraje total del vehículo.",
-          "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
-          "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo."
+          "token": "Enter the personal token provided by MiCocheEléctrico.",
+          "battery_sensor": "Select the sensor showing the vehicle's battery percentage.",
+          "range_sensor": "Select the sensor showing the remaining range in km.",
+          "odometer_sensor": "Select the sensor showing the total odometer reading.",
+          "charging_sensor": "Select the sensor showing the vehicle's charging status.",
+          "gps_tracker": "Select the device providing the vehicle's GPS position.",
+          "charge_power_sensor": "Optional. Select the sensor showing charging power in kW."
         }
       },
-
       "verify_reconfigure": {
         "title": "Verificar sensores",
-        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}"
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}"
       }
     },
-
     "abort": {
       "reconfigure_successful": {
         "title": "Configuración actualizada",

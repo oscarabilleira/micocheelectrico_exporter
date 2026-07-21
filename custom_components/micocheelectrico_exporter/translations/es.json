@@ -10,7 +10,8 @@
           "range_sensor": "Autonomía restante",
           "odometer_sensor": "Kilometraje total",
           "charging_sensor": "Estado de carga",
-          "gps_tracker": "Localización GPS"
+          "gps_tracker": "Localización GPS",
+          "charge_power_sensor": "Potencia de carga (kW)"
         },
         "data_description": {
           "token": "Introduce el token personal proporcionado por MiCocheEléctrico.",
@@ -18,13 +19,9 @@
           "range_sensor": "Selecciona el sensor que indica los kilómetros de autonomía restantes.",
           "odometer_sensor": "Selecciona el sensor que indica el kilometraje total del vehículo.",
           "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
-          "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo."
+          "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo.",
+          "charge_power_sensor": "Opcional. Selecciona el sensor que indica la potencia de carga en kW."
         }
-      },
-
-      "verify": {
-        "title": "Verificar sensores",
-        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}"
       },
 
       "reconfigure": {
@@ -36,7 +33,8 @@
           "range_sensor": "Autonomía restante",
           "odometer_sensor": "Kilometraje total",
           "charging_sensor": "Estado de carga",
-          "gps_tracker": "Localización GPS"
+          "gps_tracker": "Localización GPS",
+          "charge_power_sensor": "Potencia de carga (kW)"
         },
         "data_description": {
           "token": "Introduce el token personal proporcionado por MiCocheEléctrico.",
@@ -44,20 +42,26 @@
           "range_sensor": "Selecciona el sensor que indica los kilómetros de autonomía restantes.",
           "odometer_sensor": "Selecciona el sensor que indica el kilometraje total del vehículo.",
           "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
-          "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo."
+          "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo.",
+          "charge_power_sensor": "Opcional. Selecciona el sensor que indica la potencia de carga en kW."
         }
+      },
+
+      "verify": {
+        "title": "Verificar sensores",
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}"
       },
 
       "verify_reconfigure": {
         "title": "Verificar sensores",
-        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}"
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}"
       }
     },
 
     "abort": {
       "reconfigure_successful": {
         "title": "Configuración actualizada",
-        "description": "La integración de MiCocheEléctrico se ha actualizado correctamente."
+        "description": "La configuración de MiCocheEléctrico se ha actualizado correctamente."
       }
     }
   }
