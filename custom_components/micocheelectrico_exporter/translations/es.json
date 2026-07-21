@@ -11,7 +11,8 @@
           "odometer_sensor": "Kilometraje total",
           "charging_sensor": "Estado de carga",
           "gps_tracker": "Localización GPS",
-          "charge_power_sensor": "Potencia de carga (kW)"
+          "charge_power_sensor": "Potencia de carga (kW)",
+          "plugged_sensor": "Enchufado"
         },
         "data_description": {
           "token": "Introduce el token personal proporcionado por MiCocheEléctrico.",
@@ -20,7 +21,8 @@
           "odometer_sensor": "Selecciona el sensor que indica el kilometraje total del vehículo.",
           "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
           "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo.",
-          "charge_power_sensor": "Opcional. Selecciona el sensor que indica la potencia de carga en kW."
+          "charge_power_sensor": "Opcional. Selecciona el sensor que indica la potencia de carga en kW.",
+          "plugged_sensor": "Opcional. Selecciona el sensor binario que indica si el vehículo está enchufado."
         }
       },
 
@@ -34,7 +36,8 @@
           "odometer_sensor": "Kilometraje total",
           "charging_sensor": "Estado de carga",
           "gps_tracker": "Localización GPS",
-          "charge_power_sensor": "Potencia de carga (kW)"
+          "charge_power_sensor": "Potencia de carga (kW)",
+          "plugged_sensor": "Enchufado"
         },
         "data_description": {
           "token": "Introduce el token personal proporcionado por MiCocheEléctrico.",
@@ -43,18 +46,19 @@
           "odometer_sensor": "Selecciona el sensor que indica el kilometraje total del vehículo.",
           "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
           "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo.",
-          "charge_power_sensor": "Opcional. Selecciona el sensor que indica la potencia de carga en kW."
+          "charge_power_sensor": "Opcional. Selecciona el sensor que indica la potencia de carga en kW.",
+          "plugged_sensor": "Opcional. Selecciona el sensor binario que indica si el vehículo está enchufado."
         }
       },
 
       "verify": {
         "title": "Verificar sensores",
-        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}"
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}\n\nEnchufado:\n{plugged_sensor}\nValor actual: {plugged_value}"
       },
 
       "verify_reconfigure": {
         "title": "Verificar sensores",
-        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}"
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}\n\nEnchufado:\n{plugged_sensor}\nValor actual: {plugged_value}"
       }
     },
 

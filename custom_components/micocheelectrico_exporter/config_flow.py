@@ -72,6 +72,15 @@ def get_schema(defaults=None):
                     domain="sensor"
                 )
             ),
+
+            vol.Optional(
+                "plugged_sensor",
+                default=defaults.get("plugged_sensor")
+            ): selector.EntitySelector(
+                selector.EntitySelectorConfig(
+                    domain="binary_sensor"
+                )
+            ),
         }
     )
 
@@ -188,6 +197,12 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             else None
         )
 
+        enchufado = (
+            self.hass.states.get(data["plugged_sensor"])
+            if data.get("plugged_sensor")
+            else None
+        )
+
         return {
 
             "battery_sensor": data["battery_sensor"],
@@ -232,6 +247,16 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             "charge_power_value": (
                 potencia.state
                 if potencia
+                else "No disponible"
+            ),
+
+            "plugged_sensor": (
+                data.get("plugged_sensor")
+                or "No configurado"
+            ),
+            "plugged_value": (
+                enchufado.state
+                if enchufado
                 else "No disponible"
             ),
         }

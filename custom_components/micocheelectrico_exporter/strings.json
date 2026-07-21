@@ -11,7 +11,8 @@
           "odometer_sensor": "Total odometer",
           "charging_sensor": "Charging status",
           "gps_tracker": "GPS location",
-          "charge_power_sensor": "Charging power (kW)"
+          "charge_power_sensor": "Charging power (kW)",
+          "plugged_sensor": "Plugged in"
         },
         "data_description": {
           "token": "Enter the personal token provided by MiCocheEléctrico.",
@@ -20,12 +21,13 @@
           "odometer_sensor": "Select the sensor showing the total odometer reading.",
           "charging_sensor": "Select the sensor showing the vehicle's charging status.",
           "gps_tracker": "Select the device providing the vehicle's GPS position.",
-          "charge_power_sensor": "Optional. Select the sensor showing charging power in kW."
+          "charge_power_sensor": "Optional. Select the sensor showing charging power in kW.",
+          "plugged_sensor": "Optional. Select the binary sensor showing whether the vehicle is plugged in."
         }
       },
       "verify": {
         "title": "Verificar sensores",
-        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}"
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}\n\nEnchufado:\n{plugged_sensor}\nValor actual: {plugged_value}"
       },
       "reconfigure": {
         "title": "Reconfigurar MiCocheEléctrico",
@@ -37,7 +39,8 @@
           "odometer_sensor": "Total odometer",
           "charging_sensor": "Charging status",
           "gps_tracker": "GPS location",
-          "charge_power_sensor": "Charging power (kW)"
+          "charge_power_sensor": "Charging power (kW)",
+          "plugged_sensor": "Plugged in"
         },
         "data_description": {
           "token": "Enter the personal token provided by MiCocheEléctrico.",
@@ -46,12 +49,13 @@
           "odometer_sensor": "Select the sensor showing the total odometer reading.",
           "charging_sensor": "Select the sensor showing the vehicle's charging status.",
           "gps_tracker": "Select the device providing the vehicle's GPS position.",
-          "charge_power_sensor": "Optional. Select the sensor showing charging power in kW."
+          "charge_power_sensor": "Optional. Select the sensor showing charging power in kW.",
+          "plugged_sensor": "Optional. Select the binary sensor showing whether the vehicle is plugged in."
         }
       },
       "verify_reconfigure": {
         "title": "Verificar sensores",
-        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}"
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}\n\nPotencia de carga:\n{charge_power_sensor}\nValor actual: {charge_power_value}\n\nEnchufado:\n{plugged_sensor}\nValor actual: {plugged_value}"
       }
     },
     "abort": {

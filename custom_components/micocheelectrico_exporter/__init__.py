@@ -40,6 +40,12 @@ async def async_setup_entry(
             else None
         )
 
+        enchufado = (
+            hass.states.get(datos["plugged_sensor"])
+            if datos.get("plugged_sensor")
+            else None
+        )
+
         # Comprobación mínima de sensores necesarios
         if not bateria or not autonomia or not odometro:
             return
@@ -79,6 +85,12 @@ async def async_setup_entry(
             except ValueError:
                 charger_power = 0.0
 
+        # Enchufado, a partir de un binary_sensor (on/off)
+        plugged_estado = False
+
+        if enchufado and enchufado.state not in (None, "unknown", "unavailable"):
+            plugged_estado = enchufado.state == "on"
+
         payload = {
             "manufacturer": manufacturer,
             "model": model,
@@ -88,9 +100,11 @@ async def async_setup_entry(
             "level": int(float(bateria.state)),
             "charging": charging_estado,
 
-            "plugged": False,
+            "plugged": plugged_estado,
 
             "chargerPower": charger_power,
+
+            "chargeRemainingTime": None,
 
             "latitude": (
                 gps.attributes.get("latitude")
