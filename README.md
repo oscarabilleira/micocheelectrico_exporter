@@ -1,10 +1,18 @@
-![Logo](logo.png)
+<p align="center">
+  <img src="logo.png" alt="MiCocheEléctrico" width="180">
+</p>
 
-# MiCocheEléctrico Exporter
+<h1 align="center">MiCocheEléctrico Exporter</h1>
 
-Exporta automáticamente los datos de tu vehículo desde Home Assistant a la app **MiCocheEléctrico**.
+<p align="center">
+  <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=oscarabilleira&repository=micocheelectrico_exporter&category=integration">
+    <img src="https://my.home-assistant.io/badges/hacs_repository.svg" alt="Open in Home Assistant">
+  </a>
+</p>
 
-La integración es compatible con cualquier vehículo soportado por Home Assistant y envía periódicamente la información a tu cuenta de MiCocheEléctrico.
+Exporta automáticamente los datos de tu vehículo desde Home Assistant a la aplicación **MiCocheEléctrico**.
+
+La integración es compatible con cualquier vehículo soportado por Home Assistant y envía periódicamente la información a tu cuenta de **MiCocheEléctrico**.
 
 ## Características
 
@@ -21,15 +29,15 @@ La integración es compatible con cualquier vehículo soportado por Home Assista
 2. Reinicia Home Assistant.
 3. Ve a **Ajustes → Dispositivos y servicios**.
 4. Añade **MiCocheEléctrico Exporter**.
-5. Introduce el token generado en la aplicación MiCocheEléctrico desde tu perfil.
-6. Selecciona los sensores correspondientes a tu vehículo.
-7. Continúa la configuración en la app "Micocheeléctrico"
+5. Introduce el token generado desde tu perfil en la aplicación **MiCocheEléctrico**.
+6. Selecciona las entidades correspondientes a tu vehículo.
+7. Completa la configuración desde la aplicación **MiCocheEléctrico**.
 
+## Aplicación
 
+Descarga **Mi Coche Eléctrico** para Android o iPhone.
 
-## App
-Búscala como "Mi coche eléctrico" en Google play o la App Store.
-🌐 https://micocheelectrico.abrir.gal 
+🌐 https://micocheelectrico.abrir.gal
 
 ## Código fuente
 
