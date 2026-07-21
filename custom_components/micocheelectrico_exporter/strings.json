@@ -2,16 +2,26 @@
   "config": {
     "step": {
       "user": {
-        "title": "MiCocheEléctrico",
-        "description": "Configura el envío automático de datos del vehículo.",
-        "data": {
-          "token": "Token personal",
-          "battery_sensor": "Batería del vehículo",
-          "range_sensor": "Autonomía restante",
-          "odometer_sensor": "Kilometraje total",
-          "charging_sensor": "Estado de carga",
-          "gps_tracker": "Localización GPS"
-        }
+        "title": "Configuración MiCocheEléctrico",
+        "description": "Selecciona los sensores del vehículo."
+      },
+      "verify": {
+        "title": "Verificar sensores",
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}"
+      },
+      "reconfigure": {
+        "title": "Reconfigurar MiCocheEléctrico",
+        "description": "Modifica la configuración de los sensores."
+      },
+      "verify_reconfigure": {
+        "title": "Verificar sensores",
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}"
+      }
+    },
+    "abort": {
+      "reconfigure_successful": {
+        "title": "Configuración actualizada",
+        "description": "La integración se ha actualizado correctamente."
       }
     }
   }

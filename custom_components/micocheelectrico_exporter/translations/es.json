@@ -20,6 +20,23 @@
           "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
           "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo."
         }
+      },
+
+      "verify": {
+        "title": "Verificar sensores",
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}"
+      },
+
+      "verify_reconfigure": {
+        "title": "Verificar sensores",
+        "description": "Comprueba que los sensores seleccionados son correctos:\n\nBatería:\n{battery_sensor}\nValor actual: {battery_value}\n\nAutonomía:\n{range_sensor}\nValor actual: {range_value}\n\nOdómetro:\n{odometer_sensor}\nValor actual: {odometer_value}\n\nCarga:\n{charging_sensor}\nValor actual: {charging_value}\n\nGPS:\n{gps_tracker}\nEstado: {gps_value}"
+      }
+    },
+
+    "abort": {
+      "reconfigure_successful": {
+        "title": "Configuración actualizada",
+        "description": "La configuración de MiCocheEléctrico se ha actualizado correctamente."
       }
     }
   }
