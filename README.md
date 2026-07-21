@@ -1,3 +1,5 @@
+![Logo](logo.png)
+
 # MiCocheEléctrico Exporter
 
 Exporta automáticamente los datos de tu vehículo desde Home Assistant a la app **MiCocheEléctrico**.
@@ -25,9 +27,9 @@ La integración es compatible con cualquier vehículo soportado por Home Assista
 
 
 
-## Proyecto
-
-🌐 https://abrir.gal/app_micocheelectrico/
+## App
+Búscala como "Mi coche eléctrico" en Google play o la App Store.
+🌐 https://micocheelectrico.abrir.gal 
 
 ## Código fuente
 
