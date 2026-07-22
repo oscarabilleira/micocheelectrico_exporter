@@ -21,8 +21,8 @@
           "odometer_sensor": "Select the sensor showing the total odometer reading.",
           "charging_sensor": "Select the sensor showing the vehicle's charging status.",
           "gps_tracker": "Select the device providing the vehicle's GPS position.",
-          "charge_power_sensor": "Optional. Select the sensor showing charging power in kW.",
-          "plugged_sensor": "Optional. Select the binary sensor showing whether the vehicle is plugged in."
+          "charge_power_sensor": "Select the sensor showing charging power in kW.",
+          "plugged_sensor": "Select the binary sensor showing whether the vehicle is plugged in."
         }
       },
       "verify": {
@@ -49,8 +49,8 @@
           "odometer_sensor": "Select the sensor showing the total odometer reading.",
           "charging_sensor": "Select the sensor showing the vehicle's charging status.",
           "gps_tracker": "Select the device providing the vehicle's GPS position.",
-          "charge_power_sensor": "Optional. Select the sensor showing charging power in kW.",
-          "plugged_sensor": "Optional. Select the binary sensor showing whether the vehicle is plugged in."
+          "charge_power_sensor": "Select the sensor showing charging power in kW.",
+          "plugged_sensor": "Select the binary sensor showing whether the vehicle is plugged in."
         }
       },
       "verify_reconfigure": {

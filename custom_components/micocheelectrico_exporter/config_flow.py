@@ -64,7 +64,7 @@ def get_schema(defaults=None):
                 )
             ),
 
-            vol.Optional(
+            vol.Required(
                 "charge_power_sensor",
                 default=defaults.get("charge_power_sensor")
             ): selector.EntitySelector(
@@ -73,7 +73,7 @@ def get_schema(defaults=None):
                 )
             ),
 
-            vol.Optional(
+            vol.Required(
                 "plugged_sensor",
                 default=defaults.get("plugged_sensor")
             ): selector.EntitySelector(
@@ -191,16 +191,12 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             data["gps_tracker"]
         )
 
-        potencia = (
-            self.hass.states.get(data["charge_power_sensor"])
-            if data.get("charge_power_sensor")
-            else None
+        potencia = self.hass.states.get(
+            data["charge_power_sensor"]
         )
 
-        enchufado = (
-            self.hass.states.get(data["plugged_sensor"])
-            if data.get("plugged_sensor")
-            else None
+        enchufado = self.hass.states.get(
+            data["plugged_sensor"]
         )
 
         return {
@@ -240,20 +236,14 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 else "No disponible"
             ),
 
-            "charge_power_sensor": (
-                data.get("charge_power_sensor")
-                or "No configurado"
-            ),
+            "charge_power_sensor": data["charge_power_sensor"],
             "charge_power_value": (
                 potencia.state
                 if potencia
                 else "No disponible"
             ),
 
-            "plugged_sensor": (
-                data.get("plugged_sensor")
-                or "No configurado"
-            ),
+            "plugged_sensor": data["plugged_sensor"],
             "plugged_value": (
                 enchufado.state
                 if enchufado

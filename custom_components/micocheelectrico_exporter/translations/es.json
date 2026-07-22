@@ -21,8 +21,8 @@
           "odometer_sensor": "Selecciona el sensor que indica el kilometraje total del vehículo.",
           "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
           "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo.",
-          "charge_power_sensor": "Opcional. Selecciona el sensor que indica la potencia de carga en kW.",
-          "plugged_sensor": "Opcional. Selecciona el sensor binario que indica si el vehículo está enchufado."
+          "charge_power_sensor": "Selecciona el sensor que indica la potencia de carga en kW.",
+          "plugged_sensor": "Selecciona el sensor binario que indica si el vehículo está enchufado."
         }
       },
 
@@ -46,8 +46,8 @@
           "odometer_sensor": "Selecciona el sensor que indica el kilometraje total del vehículo.",
           "charging_sensor": "Selecciona el sensor que indica el estado de carga del vehículo.",
           "gps_tracker": "Selecciona el dispositivo que proporciona la posición GPS del vehículo.",
-          "charge_power_sensor": "Opcional. Selecciona el sensor que indica la potencia de carga en kW.",
-          "plugged_sensor": "Opcional. Selecciona el sensor binario que indica si el vehículo está enchufado."
+          "charge_power_sensor": "Selecciona el sensor que indica la potencia de carga en kW.",
+          "plugged_sensor": "Selecciona el sensor binario que indica si el vehículo está enchufado."
         }
       },
 
