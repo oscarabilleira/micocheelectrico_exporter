@@ -1,7 +1,7 @@
 {
   "domain": "micocheelectrico_exporter",
   "name": "MiCocheEléctrico Exporter",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "config_flow": true,
   "documentation": "https://abrir.gal"
 }

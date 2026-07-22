@@ -52,18 +52,27 @@ async def async_setup_entry(
 
         manufacturer = None
         model = None
+        charging_integration = None
 
         try:
             entity_registry = er.async_get(hass)
-            entity_entry = entity_registry.async_get(datos["battery_sensor"])
 
-            if entity_entry and entity_entry.device_id:
+            entity_entry_bateria = entity_registry.async_get(datos["battery_sensor"])
+
+            if entity_entry_bateria and entity_entry_bateria.device_id:
                 device_registry = dr.async_get(hass)
-                device = device_registry.async_get(entity_entry.device_id)
+                device = device_registry.async_get(entity_entry_bateria.device_id)
 
                 if device:
                     manufacturer = device.manufacturer
                     model = device.model
+
+            # Dominio de la integración que expone el sensor de carga
+            # (ej. "mbapi2020" para MercedesME 2020), no el fabricante del coche
+            entity_entry_carga = entity_registry.async_get(datos["charging_sensor"])
+
+            if entity_entry_carga:
+                charging_integration = entity_entry_carga.platform
 
         except Exception:
             pass
@@ -99,6 +108,7 @@ async def async_setup_entry(
             "range": int(float(autonomia.state)),
             "level": int(float(bateria.state)),
             "charging": charging_estado,
+            "chargingIntegration": charging_integration,
 
             "plugged": plugged_estado,
 
