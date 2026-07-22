@@ -109,6 +109,7 @@ async def async_setup_entry(
             "level": int(float(bateria.state)),
             "charging": charging_estado,
             "chargingIntegration": charging_integration,
+            "chargingSensorEntity": datos["charging_sensor"],
 
             "plugged": plugged_estado,
 
