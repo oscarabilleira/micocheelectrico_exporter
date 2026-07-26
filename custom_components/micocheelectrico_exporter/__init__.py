@@ -53,6 +53,7 @@ async def async_setup_entry(
         manufacturer = None
         model = None
         charging_integration = None
+        all_sensors = {}
 
         try:
             entity_registry = er.async_get(hass)
@@ -68,11 +69,29 @@ async def async_setup_entry(
                     model = device.model
 
             # Dominio de la integración que expone el sensor de carga
-            # (ej. "mbapi2020" para MercedesME 2020), no el fabricante del coche
             entity_entry_carga = entity_registry.async_get(datos["charging_sensor"])
 
             if entity_entry_carga:
                 charging_integration = entity_entry_carga.platform
+
+            # Recopilar todas las entidades del mismo dispositivo que el
+            # sensor de carga, para poder recomendar el sensor correcto
+            # a usuarios que lo hayan configurado mal
+            device_id_ref = (
+                entity_entry_carga.device_id
+                if entity_entry_carga
+                else None
+            )
+
+            if device_id_ref:
+                for ent in entity_registry.entities.values():
+                    if ent.device_id == device_id_ref:
+                        estado_ent = hass.states.get(ent.entity_id)
+                        all_sensors[ent.entity_id] = (
+                            estado_ent.state
+                            if estado_ent
+                            else None
+                        )
 
         except Exception:
             pass
@@ -100,6 +119,19 @@ async def async_setup_entry(
         if enchufado and enchufado.state not in (None, "unknown", "unavailable"):
             plugged_estado = enchufado.state == "on"
 
+        # Qué entity_id tiene elegido el usuario en cada campo de
+        # configuración, para poder revisarlo/recomendar cambios
+        # desde el panel de gestión
+        campos_seleccionados = {
+            "battery_sensor": datos.get("battery_sensor"),
+            "range_sensor": datos.get("range_sensor"),
+            "odometer_sensor": datos.get("odometer_sensor"),
+            "charging_sensor": datos.get("charging_sensor"),
+            "gps_tracker": datos.get("gps_tracker"),
+            "charge_power_sensor": datos.get("charge_power_sensor"),
+            "plugged_sensor": datos.get("plugged_sensor"),
+        }
+
         payload = {
             "manufacturer": manufacturer,
             "model": model,
@@ -110,6 +142,8 @@ async def async_setup_entry(
             "charging": charging_estado,
             "chargingIntegration": charging_integration,
             "chargingSensorEntity": datos["charging_sensor"],
+            "allSensors": all_sensors,
+            "camposSeleccionados": campos_seleccionados,
 
             "plugged": plugged_estado,
 
