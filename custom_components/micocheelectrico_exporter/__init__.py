@@ -10,6 +10,7 @@ from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers import entity_registry as er
 
 from .const import DOMAIN
+from .utils import convertir_potencia_kw
 
 
 WEBHOOK_URL = "https://abrir.gal/app_micocheelectrico/webhook.php"
@@ -108,24 +109,10 @@ async def async_setup_entry(
         # W o MW, se convierte a kW antes de enviar.
         charger_power = 0.0
 
-        if potencia and potencia.state not in (None, "unknown", "unavailable"):
+        resultado_potencia = convertir_potencia_kw(potencia)
 
-            try:
-                charger_power = float(potencia.state)
-
-                unidad_potencia = str(
-                    potencia.attributes.get("unit_of_measurement") or ""
-                ).strip().lower()
-
-                if unidad_potencia == "w":
-                    charger_power = charger_power / 1000
-                elif unidad_potencia == "mw":
-                    charger_power = charger_power * 1000
-
-                charger_power = round(charger_power, 3)
-
-            except ValueError:
-                charger_power = 0.0
+        if resultado_potencia is not None:
+            charger_power = resultado_potencia[0]
 
         # Enchufado, a partir de un binary_sensor (on/off)
         plugged_estado = False
