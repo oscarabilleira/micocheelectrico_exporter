@@ -4,6 +4,7 @@ from homeassistant import config_entries
 from homeassistant.helpers import selector
 
 from .const import DOMAIN
+from .utils import convertir_potencia_kw
 
 
 def get_schema(defaults=None):
@@ -83,6 +84,33 @@ def get_schema(defaults=None):
             ),
         }
     )
+
+
+def formatear_potencia(potencia):
+    """Texto de la potencia tal y como se enviará al servidor (en kW).
+
+    Si el sensor da vatios, se indica también el valor original para que
+    el usuario entienda por qué el número es distinto.
+    """
+
+    if potencia is None:
+        return "No disponible"
+
+    resultado = convertir_potencia_kw(potencia)
+
+    if resultado is None:
+        # unknown, unavailable o un valor no numérico: se muestra tal cual
+        return potencia.state
+
+    valor_kw, unidad = resultado
+
+    texto = f"{valor_kw} kW"
+
+    if unidad in ("w", "mw"):
+        unidad_original = potencia.attributes.get("unit_of_measurement")
+        texto += f" (el sensor da {potencia.state} {unidad_original})"
+
+    return texto
 
 
 class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
@@ -237,11 +265,7 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             ),
 
             "charge_power_sensor": data["charge_power_sensor"],
-            "charge_power_value": (
-                potencia.state
-                if potencia
-                else "No disponible"
-            ),
+            "charge_power_value": formatear_potencia(potencia),
 
             "plugged_sensor": data["plugged_sensor"],
             "plugged_value": (
