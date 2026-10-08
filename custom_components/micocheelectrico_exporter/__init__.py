@@ -103,13 +103,27 @@ async def async_setup_entry(
             else "Unknown"
         )
 
-        # Potencia de carga (kW), si el sensor existe y tiene un valor numérico
+        # Potencia de carga (siempre en kW), si el sensor existe y tiene
+        # un valor numérico. Si el sensor declara su unidad de medida en
+        # W o MW, se convierte a kW antes de enviar.
         charger_power = 0.0
 
         if potencia and potencia.state not in (None, "unknown", "unavailable"):
 
             try:
                 charger_power = float(potencia.state)
+
+                unidad_potencia = str(
+                    potencia.attributes.get("unit_of_measurement") or ""
+                ).strip().lower()
+
+                if unidad_potencia == "w":
+                    charger_power = charger_power / 1000
+                elif unidad_potencia == "mw":
+                    charger_power = charger_power * 1000
+
+                charger_power = round(charger_power, 3)
+
             except ValueError:
                 charger_power = 0.0
 
